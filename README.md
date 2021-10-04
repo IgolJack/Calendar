@@ -6,13 +6,8 @@ export class CalendarComponent extends DomListener {
     super($root, options.listeners)
     this.name = options.name || ''
     this.prepare()
-    this.asyncPrepare()
   }
   prepare() {
-
-  }
-
-  async asyncPrepare() {
 
   }
 
