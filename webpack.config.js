@@ -8,7 +8,7 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const isProd = process.env.NODE_ENV === 'production'
 const isDev = !isProd
 
-const target = isDev ? 'web' : 'browserlist'
+const target = isDev ? 'web' : 'browserslist'
 
 const filename = ext => isDev ? `bundle.${ext}` : `bundle.[hash].${ext}`
 
@@ -59,11 +59,11 @@ module.exports = {
       {
         test: /\.scss$/, // test: /\.s[ac]ss$/i,
         use: [{
-          loader: 'style-loader' // creates style nodes from JS strings
+          loader: 'style-loader'
         }, {
-          loader: 'css-loader' // translates CSS into CommonJS
+          loader: 'css-loader'
         }, {
-          loader: 'sass-loader' // compiles Sass to CSS
+          loader: 'sass-loader'
         }]
       },
       {
@@ -76,9 +76,9 @@ module.exports = {
               presets: ['@babel/preset-env']
             }
           },
-          isDev && {
-            loader: 'eslint-loader'
-          }
+          // isDev && {
+          //   loader: 'eslint-loader'
+          // }
         ]
       }
     ]
