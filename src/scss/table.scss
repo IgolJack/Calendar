@@ -1,0 +1,127 @@
+$HEIGHT-EVENT: null;
+
+$breakpoints: (
+  5000px: 110px,
+  1200px: 100px,
+  992px: 80px,
+  600px: 65px,
+  500px: 60px,
+  450px: 50px,
+);
+
+@each $width, $HEIGHT-EVENT in $breakpoints {
+  @media screen and (max-width: $width) {
+    .week {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+  
+      .day {
+        font-weight: 700;
+        height: $HEIGHT-EVENT;
+        width: $HEIGHT-EVENT;
+        padding: 5px;
+        border: 0.5px solid #e2e3e3;
+        border-collapse: collapse;
+      }
+  
+    
+      .freeDay {
+        background-color: #f9fff8 ;
+      }
+  
+      .otherDays {
+        color: lightgray;
+      }
+    }
+
+    .events-inner-content{
+      & > .events-list {
+        position: relative;
+        color: black;
+        & > .eventWrapper {
+          display: inline;
+          white-space: pre;
+        }
+
+        & > .eventWrapper:before {
+          content: '\00000A';
+        }
+      }
+    }
+
+
+    .event {
+      position: absolute;
+      border: 1px solid black;
+      border-radius: 2px;
+      cursor: pointer;
+      left: 0;
+      display: inline;
+      width: 100%;
+    }
+
+    .namesOfDays{
+      text-align: center;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 5px;
+      & > td {
+        width: $HEIGHT-EVENT;
+        font-weight: 500;
+      }
+    }
+  }
+}
+
+.calendar__table {
+  text-align: center;
+  
+  .table {
+    display: inline-block;
+
+    & > .innerTable {
+      border: 1px solid #e2e3e3;
+      display: inherit;
+    }
+  }
+
+  h2 {
+    text-align: center;
+    margin-bottom: 10px;
+  }
+
+  & .name_of_month_and_buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 24px;
+
+   & > #prev {
+     font-weight: 700;
+     padding-right: 10px;
+   }
+
+   & > #next {
+    font-weight: 700;
+    padding-left: 10px;
+   }
+
+    & > #name_of_month {
+      font-weight: 600;
+    }
+
+  }
+    
+  & #tableInput {
+    font-size: 18px;
+    position: absolute;
+    top: 50px;
+  }
+}

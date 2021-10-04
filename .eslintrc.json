@@ -1,0 +1,22 @@
+{
+  "parser": "babel-eslint",
+  "env": {
+    "es2020": true,
+    "browser": true,
+    "node": true
+  },
+  "extends": ["eslint:recommended", "google"],
+  "rules": {
+    "semi": "off",
+    "require-jsdoc": "off",
+    "arrow-parens": "off",
+    "comma-dangle": "off",
+    "linebreak-style": "off",
+    "operator-linebreak": "off",
+    "max-len": "off",
+    "no-unreachable": "off",
+    "no-debugger": "off",
+    "no-prototype-builtins": "off",
+    "no-useless-escape": "off"
+  }
+}
