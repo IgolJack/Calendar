@@ -1,4 +1,4 @@
-Here a *small* framework has been created that gives a life cycle for components.
+Here a *small* framework has been created that gives a life cycle for components (Header, Table, Footer).
 
 ```
 export class CalendarComponent extends DomListener {
